@@ -8,7 +8,25 @@ struct Nodo
     Nodo *Izquierda;
     Nodo *Deracha;
 
-    Nodo(int Entero) : Dato(Entero), Izquierda(NULL), Deracha(NULL) {}
+    // Constructor para inicializar miembros de la estructura.
+    Nodo(int Entero)
+    {
+        Dato = Entero;
+        Izquierda = NULL;
+        Deracha = NULL;
+    }
+
+    /* El constructor ayuda a simplificar código al momento de declarar cada nodo.
+
+        En lugar de estas instrucciones:
+            struct Nodo *Nodo1 = (struct Nodo *)malloc(sizeof(struct Nodo));
+            Nodo1->Dato = 10;
+            Nodo1->Anterior = NULL;
+            Nodo1->Siguiente = Nodo2;
+
+        Podemos usar solo una instrucción indicando su recorrido:
+            Nodo *Raiz = new Nodo(0);
+    */
 };
 
 void ImprimirArbol(Nodo *Raiz, int Separacion = 3, int Espacio = 5)
