@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    // Asignar valores al árbol.
+    // Asignar valores al árbol binario equilibrado.
     Nodo *Raiz = new Nodo(0);
     Raiz->Izquierda = new Nodo(1);
     Raiz->Deracha = new Nodo(2);
@@ -18,7 +18,7 @@ int main()
     cout << " * Diagrama del Arbol Binario Equilibrado:" << endl;
     ImprimirArbol(Raiz);
 
-    // Liberar la memoria.
+    // Liberar memoria usando "delete" en lugar de "free" porque los nodos son objetos.
     delete Raiz->Deracha->Deracha;
     delete Raiz->Deracha->Izquierda;
     delete Raiz->Izquierda->Deracha;
