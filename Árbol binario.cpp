@@ -5,7 +5,7 @@ using namespace std;
 
 int main()
 {
-    // Asignar valores al árbol.
+    // Asignar valores al árbol binario.
     Nodo *Raiz = new Nodo(0);
     Raiz->Izquierda = new Nodo(1);
     Raiz->Deracha = new Nodo(2);
@@ -21,7 +21,7 @@ int main()
     cout << " * Diagrama del Arbol Binario:" << endl;
     ImprimirArbol(Raiz);
 
-    // Liberar la memoria.
+    // Liberar memoria usando "delete" en lugar de "free" porque los nodos son objetos.
     delete Raiz->Izquierda->Izquierda->Izquierda->Izquierda->Izquierda;
     delete Raiz->Izquierda->Izquierda->Izquierda->Deracha;
     delete Raiz->Izquierda->Izquierda->Izquierda->Izquierda;
